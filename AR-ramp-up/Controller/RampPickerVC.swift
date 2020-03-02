@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class RampPickerVCViewController: UIViewController {
+class RampPickerVC : UIViewController {
     
     var sceneView : SCNView!
     var size : CGSize!
