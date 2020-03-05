@@ -33,6 +33,9 @@ class RampPickerVC : UIViewController {
         let scene = SCNScene(named : "art.scnassets/ramps.scn")!
         sceneView.scene = scene
         
+        let obj = SCNScene(named : "art.scnassets/pipe.dae")
+        let node = obj?.rootNode.childNode(withName: "pipe", recursively: true)
+        
         preferredContentSize = size
     }
     
