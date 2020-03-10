@@ -37,12 +37,17 @@ class RampPickerVC : UIViewController {
         camera.usesOrthographicProjection = true
         scene.rootNode.camera = camera
         
-        let obj = SCNScene(named : "art.scnassets/pipe.dae")
-        let node = obj?.rootNode.childNode(withName: "pipe", recursively: true)
+        var obj = SCNScene(named : "art.scnassets/pipe.dae")
+        var node = obj?.rootNode.childNode(withName: "pipe", recursively: true)
         node?.scale = SCNVector3Make(0.0022, 0.0022, 0.0022)
         node?.position = SCNVector3Make(-0.1, 0.7, -1)
         scene.rootNode.addChildNode(node!)
         preferredContentSize = size
+        
+        obj = SCNScene(named : "art.scnassets/pyramid.dae")
+        node = obj?.rootNode.childNode(withName : "pyramid", recursively : true)!
+        node?.scale = SCNVector3Make(-0.95, -0.9, -1)
+        scene.rootNode.addChildNode(node!)
     }
     
 
