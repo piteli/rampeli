@@ -37,6 +37,9 @@ class RampPickerVC : UIViewController {
         camera.usesOrthographicProjection = true
         scene.rootNode.camera = camera
         
+        let tap = UITapGestureRecognizer(target : self, action : #selector(handleTap(_:)))
+        sceneView.addGestureRecognizer(tap)
+        
         let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(0.01 * Double.pi), z: 0, duration: 0.1))
         
         var obj = SCNScene(named : "art.scnassets/pipe.dae")
@@ -62,6 +65,12 @@ class RampPickerVC : UIViewController {
         node?.position = SCNVector3Make(-1, -2.2, -1)
         scene.rootNode.addChildNode(node!)
     }
+    
+    @objc func handleTap(_ gestureRecognizer: UIGestureRecognizer){
+        let p = gestureRecognizer.location(in : sceneView)
+    }
+    
+    
     
 
     
