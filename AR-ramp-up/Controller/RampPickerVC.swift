@@ -13,7 +13,7 @@ class RampPickerVC : UIViewController {
     
     var sceneView : SCNView!
     var size : CGSize!
-    
+    weak var rampPlacerVC: RampPlacerVC!
     
     init(size: CGSize){
         super.init(nibName : nil, bundle:nil)
@@ -68,6 +68,12 @@ class RampPickerVC : UIViewController {
     
     @objc func handleTap(_ gestureRecognizer: UIGestureRecognizer){
         let p = gestureRecognizer.location(in : sceneView)
+        let hitResults = sceneView.hitTest(p, options : [:])
+        
+        if hitResults.count > 0 {
+            let node = hitResults[0].node
+            rampPlacerVC.onRampSelected(node.name!)
+        }
     }
     
     
