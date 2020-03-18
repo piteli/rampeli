@@ -43,7 +43,7 @@ class RampPickerVC : UIViewController {
         let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(0.01 * Double.pi), z: 0, duration: 0.1))
         
         var obj = SCNScene(named : "art.scnassets/pipe.dae")
-        var node = obj?.rootNode.childNode(withName: "pipe", recursively: true)
+        var node = obj?.rootNode.childNode(withName: "pipe", recursively: true)!
         node?.runAction(rotate)
         node?.scale = SCNVector3Make(0.0022, 0.0022, 0.0022)
         node?.position = SCNVector3Make(-0.1, 0.7, -1)
