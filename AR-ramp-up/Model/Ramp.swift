@@ -34,4 +34,10 @@ class Ramp {
         node?.position = SCNVector3Make(-1, -2.2, -1)
         return node!
     }
+    
+    class func startRotation(node : SCNNode){
+        let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: CGFloat(0.01 * Double.pi), z: 0, duration: 0.1))
+        node.runAction(rotate)
+        
+    }
 }
