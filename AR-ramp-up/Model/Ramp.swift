@@ -10,6 +10,19 @@ import Foundation
 import SceneKit
 
 class Ramp {
+    
+    class func getRampForName(rampName : String) -> SCNNode {
+        switch rampName{
+        case "pipe":
+            return Ramp.getPipe()
+        case "quarter":
+            return Ramp.getQuarter()
+        case "pyramid":
+            return Ramp.getPyramid()
+        default:
+            return Ramp.getPipe()
+        }
+    }
 
     class func getPipe() -> SCNNode {
         let obj = SCNScene(named : "art.scnassets/pipe.dae")
