@@ -13,7 +13,8 @@ import ARKit
 class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    var selectedRamp : String?
+    var selectedRampName : String?
+    var selectedRamp : SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,13 +101,14 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
     }
     
     func onRampSelected(_ rampName : String){
-        selectedRamp = rampName
+        selectedRampName = rampName
         
     }
     
     func placeRamp(position : SCNVector3) {
-        if let rampName = selectedRamp{
-            let ramp = Ramp.getRampForName(rampName: selectedRamp!)
+        if let rampName = selectedRampName{
+            let ramp = Ramp.getRampForName(rampName: selectedRampName!)
+            selectedRamp = ramp
             ramp.position = position
             ramp.scale = SCNVector3Make(0.01, 0.01, 0.01)
             sceneView.scene.rootNode.addChildNode(ramp)
