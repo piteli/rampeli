@@ -45,6 +45,9 @@
                                                     <constraint firstAttribute="height" constant="41" id="d2q-8T-fep"/>
                                                 </constraints>
                                                 <state key="normal" image="removeButton"/>
+                                                <connections>
+                                                    <action selector="onRemovePressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u2T-3R-ofJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTt-NQ-NLh">
                                                 <rect key="frame" x="53" y="0.0" width="41" height="41"/>
@@ -96,6 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <connections>
+                        <outlet property="controls" destination="ByH-62-RPt" id="2Gs-hA-TJp"/>
                         <outlet property="sceneView" destination="eh4-cH-IMe" id="itm-9k-S7D"/>
                     </connections>
                 </viewController>
