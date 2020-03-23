@@ -100,7 +100,10 @@
                     </view>
                     <connections>
                         <outlet property="controls" destination="ByH-62-RPt" id="2Gs-hA-TJp"/>
+                        <outlet property="downBtn" destination="fzW-Do-wSy" id="MY2-WQ-Tte"/>
+                        <outlet property="rotateBtn" destination="VTt-NQ-NLh" id="xSI-lU-l82"/>
                         <outlet property="sceneView" destination="eh4-cH-IMe" id="itm-9k-S7D"/>
+                        <outlet property="upBtn" destination="Pjt-o0-Y7w" id="kw6-ZJ-rVL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
