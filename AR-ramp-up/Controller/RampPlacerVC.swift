@@ -137,6 +137,10 @@ class RampPlacerVC: UIViewController, ARSCNViewDelegate, UIPopoverPresentationCo
         }
     }
     
+    func rampDestroyer(){
+        
+    }
+    
     @objc func onLongPress(gesture : UILongPressGestureRecognizer){
         if let ramp = selectedRamp{
             if gesture.state == .ended{
